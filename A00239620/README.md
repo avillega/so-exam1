@@ -47,7 +47,7 @@ Luego se debe instalar algunas dependencias necesarias para poder crear un conte
 Una vez instaladas las tres dependencias se puede proceder a instalar la utilidad `lxc` para esto se puede usar el comando
 ``` # yum install lxc lxc-templates ```
 Esta es la salida luego de la instalación  
-![lxc](installing-lxc.png "Instalación lxc")  
+![installing-lxc](installing-lxc.png "Instalación lxc")  
 Una vez instalados los paquetes necesario se puede verificar los templates que se han descargado  
 ![lxc-templates](lxc-templates.png "lxc templates")  
 Tambien sera necesario iniciar el demonio de lxc  
