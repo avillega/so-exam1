@@ -28,6 +28,8 @@ $ sshpass -p {password} ssh -o StrictHostKeyChecking=no {user}@ip.nu.mb.er "{Com
 Cabe aclarar que sshpass no hace parte por defecto de CentOS7. Para instalarlo primero se debe instalar `epel-repositories` para esto solo se debe ejecutar el comando `# yum install epel-release -y`. Una ves instalados los repositorios epel solo basta con ejecutar el comando `# yum install sshpass -y`.
 El script que se escribió para cumplir con el punto 2, es el siguiente:
 ```
+#!/bin/bash
+
 while read ip
 do
 sshpass -p 'operativos' ssh -o StrictHostKeyChecking=no operativos@$ip "curl http://www.gutenberg.org/files/54240/54240-0.txt >> /tmp/libroDescargado.txt"
