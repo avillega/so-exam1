@@ -30,7 +30,7 @@ El script que se escribió para cumplir con el punto 2, es el siguiente:
 ```
 while read ip
 do
-sshpass -p 'operativos' ssh -o StrictHostKeyChecking=no operativos@$ip "curl http:///www.gutenberg.org/files/54240/54240-0.txt &gt;&gt; /tmp/libroDescargado.txt"
+sshpass -p 'operativos' ssh -o StrictHostKeyChecking=no operativos@$ip "curl http://www.gutenberg.org/files/54240/54240-0.txt >> /tmp/libroDescargado.txt"
 done < ipsFile.txt
 ```
 Este script usa un archivo **ipsFile.txt** el cual contiene las direcciones ips de los hosts (una por cada linea) en los cuales se desea descargar el archivo del proyecto gutenberg. El archivo debe estar ubicado en el mismo directorio desde donde se ejecuta este script. El libro es descargado en el directorio `/tmp` del host destino, bajo el nombre de libroDescargado.txt. Para esto se utiliza el comando `curl` y se redirecciona la salida al archivo deseado, con el operador `>>`
@@ -79,7 +79,7 @@ Para detener el contenedor se debe ejecutar el comando
 ```
 lxc-stop -n my-debian
 ```
-Para conocer que contenedores hay en el sistema se puede mostrar el contenido del archivo `/var/lib/lxc`
+Para conocer que contenedores hay en el sistema se puede mostrar el contenido del directorio `/var/lib/lxc` con el comando ls
 ![lxc-host](debian-container-on-host.PNG "host")
 
 ### 4. Referencias
