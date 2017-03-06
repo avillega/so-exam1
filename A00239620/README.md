@@ -58,26 +58,26 @@ Luego verificamos que la configuración sea correcta con el comando `# lxc-confi
 ![lxc-config](lxc-config.PNG "config")  
 Con esto hecho podemos proceder a la creación del contenedor debian para esto es necesario ejecutar el comando
 ```
-# lxc-create -n my_debian -t debian
+# lxc-create -n my-debian -t debian
 ```
 la opción **-n** se refiere al nombre que se le desea poner al contenedor. La opción **-t** se refiere a la plantilla o template que se debe usar para el contenedor, en ese caso es `Debian`  
 Una vez creado el contenedor se vera un mensaje de confirmación, que también tendrá la contraseña inicial del usuario root para ese contenedor    
-![lxc-generation](generation-complete.PNG "generation")  
+![lxc-generation](generation-complete.png "generation")  
 Una vez generado se puede inicializar el contenedor con el comando
 ```
-# lxc-start -n my_debian -d
+# lxc-start -n my-debian -d
 ```
 La opción -n se refiere al nombre del contenedor previamente creado y la opción -d es para iniciarlo como un daemon.
 Para ingresar a la consola del contenedor se ejecuta el comando
 ```
-# lxc-console -n my_debian
+# lxc-console -n my-debian
 
 ```
 Ya con esto sé esta dentro de la consola del contenedor. La siguiente captura muestra la ejecución del algunos comandos dentro del contenedor Debian.
 ![lxc-inside](inside-container.PNG "inside")
 Para detener el contenedor se debe ejecutar el comando
 ```
-lxc-stop -n my_debian
+lxc-stop -n my-debian
 ```
 Para conocer que contenedores hay en el sistema se puede mostrar el contenido del archivo `/var/lib/lxc`
 ![lxc-host](debian-container-on-host.PNG "host")
