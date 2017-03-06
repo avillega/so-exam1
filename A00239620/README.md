@@ -47,20 +47,20 @@ Luego se debe instalar algunas dependencias necesarias para poder crear un conte
 Una vez instaladas las tres dependencias se puede proceder a instalar la utilidad `lxc` para esto se puede usar el comando
 ``` # yum install lxc lxc-templates ```
 Esta es la salida luego de la instalación  
-![installing-lxc](installing-lxc.png "Instalación lxc")  
+![lxc](installing-lxc.PNG "Instalación lxc")  
 Una vez instalados los paquetes necesario se puede verificar los templates que se han descargado  
-![lxc-templates](lxc-templates.png "lxc templates")  
+![lxc-templates](lxc-templates.PNG "lxc templates")  
 Tambien sera necesario iniciar el demonio de lxc  
-![lxc-daemon](lxc-daemon-up.png "lxc daemon up")  
+![lxc-daemon-up](lxc-daemon-up.PNG "lxc daemon up")  
 Luego verificamos que la configuración sea correcta con el comando `# lxc-config`
-![lxc-config](lxc-config.png "config")  
+![lxc-config](lxc-config.PNG "config")  
 Con esto hecho podemos proceder a la creacion del contenedor debian para esto es necesario ejecutar el comando  
 ```
 # lxc-create -n my_debian -t debian
 ```
 la opción -n se refiere al nombre que se le desea poner al contenedor. La opción -t se refiere a la plantilla o template que se debe usar para el contenedor, en ese caso es `debian`  
 Una vez creado el contenedor se vera un mensaje de confirmación, que tambien tendra la contraseña inicial del usuario root para ese contenedor  
-![lxc-generation]("Generation complete.png" "generation")  
+![lxc-generation](generation-complete.PNG "generation")   
 Una vez generado se puede inicializar el contenedor con el comando
 ```
 # lxc-start -n my_debian -d
@@ -72,13 +72,13 @@ Para ingresar a la consola del contenedor se ejecuta el comando
 
 ```
 Ya con esto se esta dentro de la consolo del contenedor. La siguiente captura muestra la ejecución del algunos comandos dentro del contenedor Debian.
-![lxc-inside](inside-container.png "inside")  
+![lxc-inside](inside-container.PNG "inside")  
 Para detener el contenedor se debe ejecutar el comando 
 ```
 lxc-stop -n my_debian
 ```
 Para conocer que contenedores hay en el sistema se puede mostrar el conenido del archivo `/var/lib/lxc`  
-![lxc-host](debian-container-on-host.png "host")  
+![lxc-host](debian-container-on-host.PNG "host")  
 
 
 
